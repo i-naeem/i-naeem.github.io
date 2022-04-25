@@ -1,11 +1,24 @@
-import { Icon, Text } from '@chakra-ui/react';
-import { FaGlobe } from 'react-icons/fa';
+import { Box, HStack, Icon, Link, SimpleGrid } from '@chakra-ui/react';
+import { FaNeos } from 'react-icons/fa';
 
 const App = (props) => {
   return (
-    <Text p="3">
-      Hello World <Icon as={FaGlobe} />
-    </Text>
+    <SimpleGrid>
+      <header>
+        <HStack justify="space-between" py="4" px={[2, 10]}>
+          <Icon as={FaNeos} fontSize="xl" />
+
+          <HStack as="nav">
+            <Link>About</Link>
+            <Link>Works</Link>
+          </HStack>
+        </HStack>
+      </header>
+
+      <main>
+        <Box px={[2, 10]}>Hello World</Box>
+      </main>
+    </SimpleGrid>
   );
 };
 
