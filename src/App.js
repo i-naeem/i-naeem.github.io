@@ -1,15 +1,15 @@
 import {
   SimpleGrid,
+  IconButton,
   Heading,
   HStack,
   Image,
   Stack,
   Link,
-  Icon,
   Box,
   Text,
 } from '@chakra-ui/react';
-import { FaNeos } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 const projects = [
   {
@@ -31,11 +31,15 @@ const App = (props) => {
     <SimpleGrid>
       <header>
         <HStack justify="space-between" py="4" px={[2, 10]}>
-          <Icon as={FaNeos} fontSize="xl" />
+          <HStack as="nav" spacing="1">
+            <IconButton aria-label="Github" icon={<FaGithub />} />
+            <IconButton aria-label="Twitter" icon={<FaTwitter />} />
+            <IconButton aria-label="Linked in" icon={<FaLinkedinIn />} />
+          </HStack>
 
           <HStack as="nav">
-            <Link>About</Link>
-            <Link>Works</Link>
+            <Link href="#about">About</Link>
+            <Link href="#works">Works</Link>
           </HStack>
         </HStack>
       </header>
@@ -52,7 +56,7 @@ const App = (props) => {
             </Text>
           </Stack>
 
-          <SimpleGrid columns={3} gap={1}>
+          <SimpleGrid columns={3} gap={1} id="works">
             {projects.map((project) => {
               return (
                 <Stack p="2">
