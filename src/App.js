@@ -56,7 +56,7 @@ const App = (props) => {
             </Text>
           </Stack>
 
-          <SimpleGrid columns={3} gap={1} id="works">
+          <SimpleGrid columns={3} gap={1} id="works" minH="60vh">
             {projects.map((project) => {
               return (
                 <Stack p="2">
@@ -69,6 +69,18 @@ const App = (props) => {
           </SimpleGrid>
         </Box>
       </main>
+      <footer>
+        <HStack justify="space-between" px={[2, 10]} py="2">
+          <Text fontWeight="bold" fontSize="lg">
+            i-naeem@protonmail.com
+          </Text>
+
+          <Text textTransform="uppercase" fontSize="xs">
+            Words + Images + Code &copy; {new Date().getFullYear()} Mohammad
+            Naeem
+          </Text>
+        </HStack>
+      </footer>
     </SimpleGrid>
   );
 };
