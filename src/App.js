@@ -91,7 +91,7 @@ const App = (props) => {
           <SimpleGrid columns={[1, 1, 2, 3]} gap={1} id="works" minH="60vh">
             {projects.map((project) => {
               return (
-                <Stack p="2">
+                <Stack p="2" key={project.id}>
                   <Link
                     as="a"
                     href={project.link}
@@ -109,14 +109,21 @@ const App = (props) => {
         </Box>
       </main>
       <footer>
-        <HStack justify="space-between" p={[2, 10]}>
-          <Button onClick={onCopy}>i-naeem@protonmail.com</Button>
+        <Stack
+          direction={['column', 'row']}
+          justify="space-between"
+          p={[2, 10]}
+        >
+          <Button onClick={onCopy} size="xs">
+            {' '}
+            i-naeem@protonmail.com
+          </Button>
 
-          <Text textTransform="uppercase" fontSize="xs">
+          <Text textTransform="uppercase" align="center" fontSize="xs">
             Words + Images + Code &copy; {new Date().getFullYear()} Mohammad
             Naeem
           </Text>
-        </HStack>
+        </Stack>
       </footer>
     </SimpleGrid>
   );
