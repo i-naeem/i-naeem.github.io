@@ -1,7 +1,9 @@
 import {
+  useClipboard,
   SimpleGrid,
   IconButton,
   Heading,
+  Button,
   HStack,
   Image,
   Stack,
@@ -10,36 +12,62 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 const projects = [
   {
     id: 1,
     title: 'Definion',
+    link: 'https://github.com/i-naeem/definion',
     description: 'A simple dictionary to search the definition of a word.',
     img: 'https://github.com/i-naeem/definion/raw/alpha/public/assets/demo.png',
   },
   {
     id: 2,
     title: 'Heyming',
+    link: 'https://github.com/i-naeem/heyming',
     description:
       'Heyming is a Hamming Code encode which encodes given data in hamming code and decodes hamming code.',
     img: 'https://raw.githubusercontent.com/i-naeem/heyming/alpha/demo.jpeg',
   },
 ];
+
 const App = (props) => {
+  const { onCopy } = useClipboard('i-naeem@protonmail.com');
+
   return (
     <SimpleGrid>
       <header>
         <HStack justify="space-between" py="4" px={[2, 10]}>
           <HStack as="nav" spacing="1">
-            <IconButton aria-label="Github" icon={<FaGithub />} />
-            <IconButton aria-label="Twitter" icon={<FaTwitter />} />
-            <IconButton aria-label="Linked in" icon={<FaLinkedinIn />} />
+            <IconButton
+              as="a"
+              target="_blank"
+              aria-label="Github"
+              icon={<FaGithub />}
+              href="https://github.com/i-naeem"
+            />
+            <IconButton
+              as="a"
+              target="_blank"
+              icon={<FaTwitter />}
+              aria-label="Twitter"
+              colorScheme="twitter"
+              href="https://twitter.com/nemoxhan"
+            />
+            <IconButton
+              as="a"
+              target="_blank"
+              colorScheme="blue"
+              aria-label="Linked in"
+              icon={<FaLinkedinIn />}
+              href="https://www.linkedin.com/in/nemo-xhan"
+            />
           </HStack>
 
           <HStack as="nav">
-            <Link href="#about">About</Link>
             <Link href="#works">Works</Link>
+            <ColorModeSwitcher />
           </HStack>
         </HStack>
       </header>
@@ -47,22 +75,33 @@ const App = (props) => {
       <main>
         <Box px={[2, 10]}>
           <Stack height="80vh" justify="center">
-            <Heading fontSize="6rem" lineHeight="0.9" textTransform="uppercase">
+            <Heading
+              fontSize={['2rem', '4rem', '6rem']}
+              lineHeight="0.9"
+              textTransform="uppercase"
+            >
               Hi, I'm <br />
               Mohammad Naeem<sup>*</sup>
             </Heading>
-            <Text color="gray" as="small">
-              * ACTUALLY, I'M A WEBSITE. BUT I WAS BUILT BY LUKE MEYER.
+            <Text color="gray" as="small" textTransform="uppercase">
+              * a computer science enthusiast and life long learner.
             </Text>
           </Stack>
 
-          <SimpleGrid columns={3} gap={1} id="works" minH="60vh">
+          <SimpleGrid columns={[1, 1, 2, 3]} gap={1} id="works" minH="60vh">
             {projects.map((project) => {
               return (
                 <Stack p="2">
-                  <Image src={project.img} alt={project.title} />
-                  <Heading size="md">{project.title}</Heading>
-                  <Text fontSize="sm">{project.description}</Text>
+                  <Link
+                    as="a"
+                    href={project.link}
+                    target="_blank"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Image src={project.img} alt={project.title} mb="2" />
+                    <Heading size="md">{project.title}</Heading>
+                    <Text fontSize="sm">{project.description}</Text>
+                  </Link>
                 </Stack>
               );
             })}
@@ -70,10 +109,8 @@ const App = (props) => {
         </Box>
       </main>
       <footer>
-        <HStack justify="space-between" px={[2, 10]} py="2">
-          <Text fontWeight="bold" fontSize="lg">
-            i-naeem@protonmail.com
-          </Text>
+        <HStack justify="space-between" p={[2, 10]}>
+          <Button onClick={onCopy}>i-naeem@protonmail.com</Button>
 
           <Text textTransform="uppercase" fontSize="xs">
             Words + Images + Code &copy; {new Date().getFullYear()} Mohammad
