@@ -1,4 +1,4 @@
-<h2>Hello World! I'm Mohammad Naeem Khan</h2>
+<h2>Hello World! I'm Muhammad Naeem Khan</h2>
 
 ### 👨🏻‍💻 &nbsp;About Me
 
