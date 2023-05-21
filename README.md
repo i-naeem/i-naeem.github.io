@@ -28,5 +28,5 @@
 ### 🤝🏻 &nbsp;Connect with Me
 
 <p align="center">
-<a href="https://linkedin.com/in/nemo-xhan"><img src="https://img.shields.io/badge/-Mohammad%20Naeem-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+<a href="https://linkedin.com/in/nemo-xhan"><img src="https://img.shields.io/badge/-Muhammad%20Naeem-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
 <a href="mailto:nemoxhan@gmail.com"><img src="https://img.shields.io/badge/-nemoxhan@gmail.com-D14836?style=flat&logo=Gmail&logoColor=white"/></a></p>
