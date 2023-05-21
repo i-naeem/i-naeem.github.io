@@ -81,7 +81,7 @@ const App = (props) => {
               textTransform="uppercase"
             >
               Hi, I'm <br />
-              Mohammad Naeem<sup>*</sup>
+              Muhammad Naeem<sup>*</sup>
             </Heading>
             <Text color="gray" as="small" textTransform="uppercase">
               * a computer science enthusiast and life long learner.
