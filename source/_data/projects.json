@@ -1,0 +1,27 @@
+[
+   {
+      "name": "blurchat",
+      "url": "https://i-naeem.github.io/blurchat",
+      "desc": "Chrome extension that blur whatspp chat to increase public privacy."
+   },
+   {
+      "name": "heyming",
+      "url": "https://i-naeem.github.io/heyming",
+      "desc": "Hamming code encoder and decoder built with react and chakra ui."
+   },
+   {
+      "name": "mcsques.ai",
+      "url": "https://github.com/i-naeem/mcsques.ai",
+      "desc": "Create mcqs from text using NLTK and BertSummarizer"
+   },
+   {
+      "name": "freshhhh",
+      "url": "https://i-naeem.github.io/freshhhh",
+      "desc": "A web app that enhances focus and relaxation with ambient nature sounds."
+   },
+   {
+      "name": "DNSLookUp",
+      "url": "https://github.com/i-naeem/DNSLookUp",
+      "desc": "rest api to perform dns lookups, including reverse lookups."
+   }
+]
